@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import { Users, Briefcase, TrendingUp, ChevronDown } from 'lucide-react';
+<<<<<<< HEAD
+=======
+import CountUp from '../components/CountUp';
+>>>>>>> d82304b (Added scrolling number counter)
 
 export default function Home() {
   return (
@@ -77,7 +81,13 @@ export default function Home() {
               viewport={{ once: true }}
               className="p-6"
             >
+<<<<<<< HEAD
               <p className="text-4xl font-bold text-blue-600 mb-2">500+</p>
+=======
+              <p className="text-4xl font-bold text-blue-600 mb-2">
+                <CountUp end={500} suffix="+" />
+              </p>
+>>>>>>> d82304b (Added scrolling number counter)
               <p className="text-gray-600">Successful Projects</p>
             </motion.div>
             <motion.div
@@ -87,7 +97,13 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="p-6"
             >
+<<<<<<< HEAD
               <p className="text-4xl font-bold text-blue-600 mb-2">200+</p>
+=======
+              <p className="text-4xl font-bold text-blue-600 mb-2">
+                <CountUp end={200} suffix="+" />
+              </p>
+>>>>>>> d82304b (Added scrolling number counter)
               <p className="text-gray-600">Expert Consultants</p>
             </motion.div>
             <motion.div
@@ -97,7 +113,13 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="p-6"
             >
+<<<<<<< HEAD
               <p className="text-4xl font-bold text-blue-600 mb-2">15+</p>
+=======
+              <p className="text-4xl font-bold text-blue-600 mb-2">
+                <CountUp end={15} suffix="+" />
+              </p>
+>>>>>>> d82304b (Added scrolling number counter)
               <p className="text-gray-600">Years Experience</p>
             </motion.div>
             <motion.div
@@ -107,7 +129,13 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               className="p-6"
             >
+<<<<<<< HEAD
               <p className="text-4xl font-bold text-blue-600 mb-2">98%</p>
+=======
+              <p className="text-4xl font-bold text-blue-600 mb-2">
+                <CountUp end={98} suffix="%" />
+              </p>
+>>>>>>> d82304b (Added scrolling number counter)
               <p className="text-gray-600">Client Satisfaction</p>
             </motion.div>
           </div>

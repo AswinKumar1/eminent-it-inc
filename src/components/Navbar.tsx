@@ -13,9 +13,9 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-2xl font-bold text-blue-600">
               <img
-              src="/public/Eminent_logo.png"
+              src="https://eminentitinc.com/assets/img/logo/Logo3.png"
               alt="Eminent IT Services logo"
-              className="h-14 w-auto"
+              className="h-16 w-auto mr-2"
               />
             </Link>
           </div>

@@ -79,7 +79,7 @@ export default function Contact() {
               <Mail className="w-6 h-6 text-blue-600 mt-1" />
               <div>
                 <h3 className="text-lg font-semibold">Email</h3>
-                <p className="text-gray-600">jkennedy@eminentitinc.com</p>
+                <p className="text-gray-600">info@eminentitinc.com</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">

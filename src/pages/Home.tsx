@@ -576,7 +576,7 @@ export default function Home() {
               className="p-6 bg-white rounded-xl shadow-lg"
             >
               <p className="text-5xl font-bold text-blue-600 mb-2">
-                <CountUp end={500} suffix="+" />
+                <CountUp end={150} suffix="+" />
               </p>
               <p className="text-xl text-gray-700">Clients Served</p>
             </motion.div>

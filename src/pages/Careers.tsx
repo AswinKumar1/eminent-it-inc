@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, Clock, DollarSign, Building, ChevronRight, X } from 'lucide-react';
-import { useState } from 'react';
+import { Briefcase, MapPin, Clock, DollarSign, Building, ChevronRight, X, Upload, CheckCircle } from 'lucide-react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 
 interface JobPosition {
   id: number;
@@ -15,8 +15,30 @@ interface JobPosition {
   benefits: string[];
 }
 
+interface ApplicationFormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  position: string;
+  experience: string;
+  message: string;
+  resume: File | null;
+}
+
 export default function Careers() {
   const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null);
+  const [showApplicationForm, setShowApplicationForm] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState<ApplicationFormData>({
+    fullName: '',
+    email: '',
+    phone: '',
+    position: '',
+    experience: '',
+    message: '',
+    resume: null
+  });
   
   const jobPositions: JobPosition[] = [
     {
@@ -152,6 +174,85 @@ export default function Careers() {
       ]
     }
   ];
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData(prev => ({
+        ...prev,
+        resume: e.target.files![0]
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // In a real implementation, you would use FormData to send the file
+      // and other form data to your backend or a service like EmailJS
+      const formDataToSend = new FormData();
+      formDataToSend.append('fullName', formData.fullName);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('position', formData.position);
+      formDataToSend.append('experience', formData.experience);
+      formDataToSend.append('message', formData.message);
+      if (formData.resume) {
+        formDataToSend.append('resume', formData.resume);
+      }
+      formDataToSend.append('to_email', 'lydia@eminentitinc.com');
+      
+      // Simulate API call with a timeout
+      // In a real implementation, you would use fetch or axios to send the data
+      // Example: await fetch('/api/submit-application', { method: 'POST', body: formDataToSend });
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Show success message
+      setFormSubmitted(true);
+      
+      // Reset form after submission
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        position: '',
+        experience: '',
+        message: '',
+        resume: null
+      });
+      
+      // Close the form after a delay
+      setTimeout(() => {
+        setShowApplicationForm(false);
+        setFormSubmitted(false);
+      }, 3000);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting your application. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const openApplicationForm = (jobTitle?: string) => {
+    if (jobTitle) {
+      setFormData(prev => ({
+        ...prev,
+        position: jobTitle
+      }));
+    }
+    setShowApplicationForm(true);
+  };
 
   return (
     <div className="min-h-screen pt-20">
@@ -380,7 +481,13 @@ export default function Careers() {
               </div>
               
               <div className="mt-8 flex justify-center">
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                <button 
+                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  onClick={() => {
+                    setSelectedJob(null);
+                    openApplicationForm(selectedJob.title);
+                  }}
+                >
                   Apply Now
                 </button>
               </div>
@@ -401,12 +508,194 @@ export default function Careers() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors"
+              onClick={() => openApplicationForm()}
             >
               Submit Your Resume
             </motion.button>
           </div>
         </div>
       </section>
+
+      {/* Application Form Modal */}
+      {showApplicationForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+          >
+            <div className="sticky top-0 bg-white p-6 border-b border-gray-200 flex justify-between items-center">
+              <h3 className="text-2xl font-bold text-gray-900">
+                {formData.position ? `Apply for ${formData.position}` : 'Submit Your Application'}
+              </h3>
+              <button 
+                onClick={() => setShowApplicationForm(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="p-6">
+              {formSubmitted ? (
+                <div className="text-center py-10">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-10 h-10 text-green-600" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Application Submitted!</h4>
+                  <p className="text-gray-600 mb-6">
+                    Thank you for your interest in joining Eminent IT Services. We've received your application and will be in touch soon.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-gray-700 mb-2" htmlFor="fullName">
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700 mb-2" htmlFor="email">
+                        Email <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-gray-700 mb-2" htmlFor="phone">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="(123) 456-7890"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700 mb-2" htmlFor="position">
+                        Position <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="position"
+                        name="position"
+                        value={formData.position}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Position you're applying for"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-700 mb-2" htmlFor="experience">
+                      Years of Experience <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      id="experience"
+                      name="experience"
+                      value={formData.experience}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                      <option value="">Select experience</option>
+                      <option value="0-1 years">0-1 years</option>
+                      <option value="1-3 years">1-3 years</option>
+                      <option value="3-5 years">3-5 years</option>
+                      <option value="5-10 years">5-10 years</option>
+                      <option value="10+ years">10+ years</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-700 mb-2" htmlFor="message">
+                      Cover Letter / Additional Information
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      rows={4}
+                      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Tell us why you're interested in this position and what makes you a great fit..."
+                    ></textarea>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-700 mb-2" htmlFor="resume">
+                      Resume <span className="text-red-500">*</span>
+                    </label>
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                      <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        onChange={handleFileChange}
+                        required
+                        className="hidden"
+                        accept=".pdf,.doc,.docx"
+                      />
+                      <label 
+                        htmlFor="resume" 
+                        className="cursor-pointer flex flex-col items-center justify-center"
+                      >
+                        <Upload className="w-10 h-10 text-blue-500 mb-2" />
+                        <span className="text-gray-700 font-medium">
+                          {formData.resume ? formData.resume.name : 'Click to upload your resume'}
+                        </span>
+                        <span className="text-gray-500 text-sm mt-1">
+                          Accepted formats: PDF, DOC, DOCX
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8 flex justify-center">
+                    <button 
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`${
+                        isSubmitting ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'
+                      } text-white px-8 py-3 rounded-lg font-semibold transition-colors w-full md:w-auto`}
+                    >
+                      {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

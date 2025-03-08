@@ -605,7 +605,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Clients</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Clients in business with</h2>
             <p className="text-xl text-gray-600">Trusted by leading companies across industries</p>
           </motion.div>
 

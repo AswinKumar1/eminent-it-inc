@@ -77,7 +77,7 @@ export default function Home() {
   const clients = [
     {
       name: "Brown Brothers Harriman",
-      logo: "https://www.bbh.com/content/dam/bbh/external/brand/logo/bbh-logo-social-data.jpg"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Brown_Brothers_Harriman_Logo_1.svg/1200px-Brown_Brothers_Harriman_Logo_1.svg.png"
     },
     {
       name: "Oracle",
@@ -85,7 +85,7 @@ export default function Home() {
     },
     {
       name: "Intuit",
-      logo: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQoAAAC+CAMAAAD6ObEsAAAAdVBMVEX///8Ad8UAb8IAdMQAccMAc8P2/P5NltLl8fn7/v+10utoo9cAa8GfweMZfchVlNCtzOiSud8mgsmBsNyVvuIAasCvzehrpNfR4/J6rdsAZ7/L3/CMueDD2u5DktBUmtPc6vXt9fuixeU8jM0whssggMi51exprhhaAAADq0lEQVR4nO3ae3uaPBzGccgBD0RHq9JatR5aff8vcQoJGKbbLh/S5+ry/fy3LPyEexmHJEkCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwrxuut3kRoO7pZbt8DVA3nFIorc1x2HPZ0cBoqc2y57IhrUx6IdNRv3W3oqorZv2WDelTpvU5z3stu6kTPtfte7gFMxT2lOVHr3WX2kUR4jYUxK6J4thr3byJYtJr3YD2TRSDXuuulYti3GvdkAb2n8/0O5Bf3b1CZ73WDWkoqvumeu+57qzOYlH2XDek3dEosch7rzszQhnxnZI4WxXlLkDZ/fiw+T7/OxC1SAbqKLO6DfVXRVZuUyHEdDDZXx00vG9/u2ot82r/0pD9pm6o678yWYhK80E1fqv+bC5PhdFa1E/LVCqzbD+5pLjnbV11WNqqU//HpnXrYu0aPkT7Y+fP3Le7dcUXjMxJ/cIop00UdYN+Ob/ppO6tr3p5SJv5g2l6j/0um9UHymf/x451rurJNfyoG7SNQtytm35dFOmNKFZ2RDjSuCzuR6FsFPpfimK5V93TkdLeMGKLYqt/OR+9rfvEFUVanfb5brlYmHZ4LF5jjOJCfBa786NzotxN43IzTa6eIM3AUcJ7ODwYhXuCNNnL/+EJcjMKc7Bt2YfLQlbdyqJWuukm5VqKetg8FsXOFSnssJN5U7fnydNbfhOFOTW9hs1cyso7urDtplP1sShaz92OX+F+FOp66t1eWyoO3tGRROHNILl5Je0vTcQRhX/RmcvHP+k4ohAnr59d8ZA/vNY4ojD+x+Ag4ijU3utnlyaijEITBVEQxRdHkUYbRdpZVU4jjiL1Wkcm4iiE90G5ijEKtytA7K5bXUBRReHava0imfvSjyqKZoPE9ULIi44xitHCXXW7X+3g4okrCvf1dv4bl8WsSSKyKNppQfH5dNqcZtVCm4wxCvc2dTlEualxnUf44p0kG3e3aKmXQjwaRTmfB9+sFyqKZNneG2zBY3J4NIpVOZsXoXe/B4siyf21LvWcPR5FkeWzJPTO3omQF7qNwtQNohOFqppVJ4q6s3y7VXpu2lVXLfL2x0Qbha3ajeKo/Y6b12K92/yX6/wL5fugsnVRbGzDu780t66b3/3J/5PtfHuL93AphdJSayG21ege2yLNYsrSNqw7R+b2HJqBcBiPD8m3lm2e8m0+G+//3PVPlSLZEAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL65n+w/SHDKFDSwAAAAAElFTkSuQmCC"
+      logo: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAkFBMVEX///8kbP8daf9Uh/8AYP9ejv4AYv71+P3K1/3C0v5Wif8AYf////0AY/3s8v/m7v7U3/7Z5f6lvv4xdf8rcv8AXP9Aef9Ce/6Usf+Oq/4WZ/+yx/ySrv8AWv/Y4vywxP5tl/5+pP1Igf3J2ft2n/0lb/9xmv2Wsvtci/1hkPxIg/6guP2Dpv3g6f27zf2lv/xr43x/AAAEeUlEQVR4nO2ba2OiOhCGMSKoJOB1tbFrvW51a7f//98du1aYgUHR2tNzzPt8NJdJHrkkMHgeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD3gf7gu8fxXWjGqXph5+lh1mhvtvNeMy6pq6tTNX5pBanggvjX/OOdUT1lEZaqCp82KjBW7bHWRObHuKu9QjzdqFdkJLRYTKTQk0VWo0EjLknB4vjjpuoAFtfIavoqxS+RpZOVCVSNoky0aBX/nYGqyM9j1/3st6gnBe9FWY0BDdgiIx8eC9a24gCiq2QFmYFAlhXOfVsrovzFNB+xr4SKEsNMVvqbkWWZLGKfySIj948Fg4rxa+YrZGndtJKqg67HXEi3ZWk99k+EDBYhOxcvluXdlaxf0cmYah1/Spb+cT+y9K+gPN5hArWQhHVY1plz8IAdkRYOy/KWwyphV1ncy69Z9yJLe+tKc/ebaeB+1bHen6xHwwMoG/i+H5m8wmwOA74m5I2lRemtZfFFKR89xd56URrnXJnBuJnE8fRtE/FhBMd9it62KXU61N+sKN1t3FhWgw+AjFPVedFtZelnJkupSbr5fW2zm+R+GyKGDkkHUVeOf2NZnJjcn/zXMyYqcEIWu1rbEV1Q5W6TfkceK5UlV/laWQmVVfJvXUK5rA71ofohG48e08Wq3Yl9uyOLn4V+khuO3pAdoxqIfTski9owj/l2OqEuTSz17ZAs4qImPOnSM3JJi5rSaCvIuvUKnvPvXbPI6l1ti4PRTXLVMk9S3+7ISogLK0xDh/Q0fZH6dkdWlwSKllJTsrUwz1IFd2S9UllSIP2bzBOyskDi6pdsJuz42gv8yA1ZGrJSIKvIN8vyIOsDyErhsqS+L5YlTbmXLecgi8h6kab8giMrhciyD8KU9Q5HVtoJWdkq6VGvbpMKI8dlzcgO0wq5FiEZn9rch6zC8653qsh6pNvxSXHOEzI+u6IlDsqiMvhpdiinLwLMGy1yTxZ7ElQL8vdD/UKfx/L5OiiLv/GPlvy1SJPl8LDEPydlPbNUOdOiEVrszaXd3YksaYlUTVbMk0/8efp+Ml7x3LDcdF2U5W15LoA1s8k0SaaTWcDTM/nCwVFZNNCHrmDo+4X0k/xrbydl6YdcAoqMXWkcWfw5fClqnY/gqKzXCodWca5uyvL08mzq6rBVaOWoLM87Zyv6U+zfVVnam9bKPuN4710the5dlfWeDLAt/TrBr4s5Ov9fWbtPytp392cdSHfFoCY8uHnnO2QNswxelljUzQrUUJaVZQYHsqwoqzE8J2vf4VN/34CKUjZav5VlypJP6OywRBadww1kdeqNlDY7skhBPRFa6vkmrbARX8zEbdJF92x68L5CZ9cPAmP/YoKgPxczUg4sSe9tuUpM53CDBNxqX9Web3pljWKDuNWbz7bb2bzXSk63on2X1Pvsd77/fe56cgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVOEf9nCDAK06+dAAAAAASUVORK5CYII="
     },
     {
       name: "Walmart",
@@ -101,11 +101,11 @@ export default function Home() {
     },
     {
       name: "Barclays",
-      logo: "data:image/png;base64,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"
+      logo: "https://1000logos.net/wp-content/uploads/2016/10/Barclays-Logo.png"
     },
     {
       name: "Comcast",
-      logo: "data:image/png;base64,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"
+      logo: "https://1000logos.net/wp-content/uploads/2016/12/Comcast-Logo.jpg"
     },
     {
       name: "Blue Cross Blue Shield",
@@ -340,9 +340,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our RPO Process</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Staffing Workflow</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive Recruitment Process Outsourcing (RPO) follows a structured approach to deliver exceptional talent
+              Our comprehensive Staffing workflow follows a structured approach to deliver exceptional talent
             </p>
           </motion.div>
 
@@ -576,7 +576,7 @@ export default function Home() {
               className="p-6 bg-white rounded-xl shadow-lg"
             >
               <p className="text-5xl font-bold text-blue-600 mb-2">
-                <CountUp end={150} suffix="+" />
+                <CountUp end={500} suffix="+" />
               </p>
               <p className="text-xl text-gray-700">Clients Served</p>
             </motion.div>
@@ -597,11 +597,11 @@ export default function Home() {
       </section>
 
       {/* 8. Client List - UPDATED with actual logos */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1.5, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
@@ -631,7 +631,7 @@ export default function Home() {
       </section>
 
       {/* 9. Testimonials - UPDATED with smaller size */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -639,8 +639,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Testimonials</h2>
-            <p className="text-xl text-gray-600">What our clients say about us</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Testimonials</h2>
+            <p className="text-xl text-white">What our clients say about us</p>
           </motion.div>
 
           <div className="relative overflow-hidden">

@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className='flex items-center'>
               <img
-                src="https://eminentitinc.com/assets/img/logo/Logo3.png"
+                src="../public/Footer_eminent_logo.png"
                 alt="Eminent IT Services"
                 className="h-20 w-auto"
               />

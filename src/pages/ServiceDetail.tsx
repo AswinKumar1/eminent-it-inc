@@ -30,14 +30,17 @@ interface ServiceDetail {
     description: string;
     icon: JSX.Element;
   }[];
-  features: string[];
+  specializations?: {
+    title: string;
+    description: string;
+    image: string;
+  }[];
   showProcessFlow?: boolean;
 }
 
 export default function ServiceDetail() {
   const { serviceId } = useParams<{ serviceId: string }>();
   
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [serviceId]);
@@ -49,7 +52,7 @@ export default function ServiceDetail() {
       subtitle: 'Connect with top IT talent across various specializations',
       description: 'Our IT staffing services provide businesses with access to highly skilled technology professionals across a wide range of specializations. Whether you need software developers, cybersecurity experts, data scientists, or IT project managers, we have the expertise to find the perfect match for your requirements. We understand the unique challenges of the tech industry and work closely with you to identify candidates who not only have the technical skills but also align with your company culture and project goals.',
       icon: <Users className="w-12 h-12" />,
-      image: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://img.freepik.com/free-photo/group-multinational-busy-people-working-office_146671-15658.jpg?t=st=1741390645~exp=1741394245~hmac=47651b97a11e4dda0a2727824469512ee3057e956f8ef4b97a6b8e8b59632831&w=2000',
       benefits: [
         {
           title: 'Technical Expertise',
@@ -72,13 +75,52 @@ export default function ServiceDetail() {
           icon: <Shield className="w-6 h-6" />
         }
       ],
-      features: [
-        'Full-time placement for permanent positions',
-        'Contract staffing for project-based needs',
-        'Contract-to-hire options to evaluate fit before committing',
-        'Technical screening and skill verification',
-        'Industry-specific expertise across various tech sectors',
-        'Ongoing support throughout the hiring process'
+      specializations: [
+        {
+          title: 'Full Stack Developer',
+          description: 'Expert developers proficient in both front-end and back-end technologies',
+          image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Backend Developer',
+          description: 'Specialists in server-side architecture and database management',
+          image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Blockchain Developer',
+          description: 'Experts in distributed ledger technology and smart contracts',
+          image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'AI/ML Engineer',
+          description: 'Specialists in artificial intelligence and machine learning solutions',
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Cybersecurity Engineer',
+          description: 'Experts in protecting systems and networks from security threats',
+          image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Data Analyst',
+          description: 'Professionals skilled in data analysis and business intelligence',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'QA Engineer',
+          description: 'Quality assurance specialists ensuring software reliability',
+          image: 'https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Business Analyst',
+          description: 'Experts in bridging business needs with technical solutions',
+          image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'DevOps Engineer',
+          description: 'Experts in bridging gap between software development and IT operations',
+          image: 'https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150061986.jpg?t=st=1741389686~exp=1741393286~hmac=0cb5a9f686bbd72a2e6b076d8def6dad450ee8e175165d5d39365a63a1db9251&w=2000'
+        }
       ]
     },
     'non-it-staffing': {
@@ -87,7 +129,7 @@ export default function ServiceDetail() {
       subtitle: 'Find exceptional talent for roles in finance, healthcare, administration, and more',
       description: 'Our Non-IT staffing services help businesses find exceptional talent across a wide range of industries and functions. From finance and accounting to healthcare, administration, marketing, and human resources, we connect you with qualified professionals who can drive your business forward. Our comprehensive recruitment approach ensures that we understand both the technical requirements of the role and the soft skills needed for success in your organization.',
       icon: <Briefcase className="w-12 h-12" />,
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1576267423048-15c0040fec78?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
       benefits: [
         {
           title: 'Industry Expertise',
@@ -110,13 +152,37 @@ export default function ServiceDetail() {
           icon: <Zap className="w-6 h-6" />
         }
       ],
-      features: [
-        'Executive and management recruitment',
-        'Administrative and support staff placement',
-        'Finance and accounting professionals',
-        'Healthcare staffing solutions',
-        'Sales and marketing talent acquisition',
-        'Human resources personnel placement'
+      specializations: [
+        {
+          title: 'Construction Manager',
+          description: 'Experienced professionals in construction project management',
+          image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Lab Technician',
+          description: 'Skilled professionals for medical and research laboratories',
+          image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Registered Nurse',
+          description: 'Licensed healthcare professionals for medical facilities',
+          image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Clinical Research Analyst',
+          description: 'Experts in clinical trials and medical research',
+          image: 'https://img.freepik.com/free-photo/team-young-specialist-doctors-standing-corridor-hospital_1303-21199.jpg?t=st=1741387760~exp=1741391360~hmac=626ffc8634f19a12a0353943aa7288ebc8d2f105740c276646ef181a0130f7a8&w=2000'
+        },
+        {
+          title: 'Quality Control Specialist',
+          description: 'Professionals ensuring product and process quality',
+          image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          title: 'Production Manager',
+          description: 'Leaders in manufacturing and production operations',
+          image: 'https://images.unsplash.com/photo-1574472374272-26e91165e036?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
+        }
       ]
     },
     'offshore-services': {
@@ -125,7 +191,7 @@ export default function ServiceDetail() {
       subtitle: 'Access skilled professionals from our global talent pool at competitive rates',
       description: 'Our Offshore Staffing Services provide businesses with access to a global talent pool of skilled professionals at competitive rates. We help you build dedicated offshore teams that work as an extension of your in-house staff, allowing you to scale operations efficiently while maintaining quality. Our comprehensive offshore staffing solutions cover everything from team setup and infrastructure to ongoing management and support, ensuring a seamless integration with your existing processes.',
       icon: <Code className="w-12 h-12" />,
-      image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
       benefits: [
         {
           title: 'Cost Savings',
@@ -147,14 +213,6 @@ export default function ServiceDetail() {
           description: 'Leverage time zone differences for 24/7 productivity',
           icon: <Clock className="w-6 h-6" />
         }
-      ],
-      features: [
-        'Dedicated development teams',
-        'IT support and maintenance services',
-        'Quality assurance and testing',
-        'Back-office operations',
-        'Data processing and management',
-        'Customer support services'
       ]
     },
     'rpo': {
@@ -163,7 +221,7 @@ export default function ServiceDetail() {
       subtitle: 'Outsource all or part of your recruitment processes to our expert team',
       description: 'Our Recruitment Process Outsourcing (RPO) solutions provide a strategic approach to talent acquisition by taking ownership of the entire recruitment function or specific components of it. We work as an extension of your HR team, implementing customized recruitment strategies that align with your business goals and company culture. Our RPO services are designed to improve quality of hire, reduce time-to-fill, and optimize recruitment costs while providing valuable insights and analytics to enhance your overall talent acquisition strategy.',
       icon: <Building className="w-12 h-12" />,
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://img.freepik.com/free-photo/woman-presenting-information-colleagues_23-2147807956.jpg?t=st=1741390938~exp=1741394538~hmac=6c2fbf3988e0b580cbb4514446d4e314a9fe3796a9ac78ad3392666d0a2bd336&w=2000',
       benefits: [
         {
           title: 'Strategic Partnership',
@@ -202,7 +260,7 @@ export default function ServiceDetail() {
       subtitle: 'Find top-tier leadership talent for your organization\'s most critical roles',
       description: 'Our Executive Search service is designed to identify and attract high-caliber leadership talent for your organization\'s most strategic positions. We understand that executive hires have a significant impact on company performance and culture, which is why our approach combines deep industry knowledge, extensive networks, and a thorough assessment methodology. Our executive search consultants work closely with you to understand your organization\'s unique challenges, culture, and leadership requirements to find executives who will drive your business forward.',
       icon: <Users className="w-12 h-12" />,
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://img.freepik.com/free-photo/business-executives-discussing-mobile-phone_107420-65772.jpg?t=st=1741391007~exp=1741394607~hmac=267fedf63600a03c297c7cfe181e8f0d3dc56d016fff49348e6b00007f10c5f9&w=2000',
       benefits: [
         {
           title: 'Access to Top Talent',
@@ -335,7 +393,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -367,7 +425,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -389,7 +447,7 @@ export default function ServiceDetail() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                   <div className="text-blue-600">{benefit.icon}</div>
@@ -402,38 +460,54 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What We Offer</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive solutions tailored to your specific needs
-            </p>
-          </motion.div>
+      {/* Specializations Section */}
+      {service.specializations && (
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">We Are Specialized In</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Explore our expertise across various domains
+              </p>
+            </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {service.features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-start bg-blue-50 p-6 rounded-lg"
-              >
-                <CheckCircle className="w-6 h-6 text-blue-600 mr-4 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-800 font-medium">{feature}</span>
-              </motion.div>
-            ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {service.specializations.map((spec, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group h-[300px] perspective"
+                >
+                  <div className="relative h-full w-full transition-all duration-500 preserve-3d group-hover:rotate-y-180">
+                    {/* Front */}
+                    <div className="absolute inset-0 bg-white rounded-xl shadow-md p-8 flex flex-col items-center justify-center text-center backface-hidden">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{spec.title}</h3>
+                      <p className="text-gray-600">{spec.description}</p>
+                    </div>
+                    
+                    {/* Back */}
+                    <div className="absolute inset-0 bg-white rounded-xl shadow-md overflow-hidden rotate-y-180 backface-hidden">
+                      <img 
+                        src={spec.image} 
+                        alt={spec.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Process Flow Section (only for RPO) */}
       {service.showProcessFlow && (

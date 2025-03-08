@@ -348,7 +348,8 @@ export default function Careers() {
       </section>
 
       {/* Open Positions Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-blue-900">
+      {/* <section className="py-20 bg-gray-100"> */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -356,8 +357,8 @@ export default function Careers() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Open Positions</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-4">Open Positions</h2>
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Explore our current opportunities and find your perfect role
             </p>
           </motion.div>

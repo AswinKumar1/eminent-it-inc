@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Users, Code, Building, ChevronRight, Briefcase, Factory } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Users, Code, Building, ChevronRight, Briefcase, Factory } from 'lucide-react';
 
 export default function Services() {
   const serviceCategories = [
@@ -75,7 +75,7 @@ export default function Services() {
       </section>
 
       {/* Main Service Categories Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -127,7 +127,7 @@ export default function Services() {
       </section>
 
       {/* Additional Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -149,7 +149,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                   <div className="text-blue-600">{service.icon}</div>
@@ -203,7 +203,7 @@ export default function Services() {
               className="rounded-xl overflow-hidden shadow-2xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
                 alt="Business team collaboration" 
                 className="w-full h-[400px] object-cover"
               />

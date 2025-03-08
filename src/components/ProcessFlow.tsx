@@ -91,7 +91,7 @@ export default function ProcessFlow() {
       title: "Planning & Strategy",
       details: [
         "Understand company's hiring needs, culture, and goals",
-        "Define the scope of RPO (full-cycle, partial, or project-based)",
+        "Define the scope of services (full-cycle, partial, or project-based)",
         "Set expectations for timelines, technology, and reporting"
       ]
     },
@@ -100,7 +100,7 @@ export default function ProcessFlow() {
       title: "Talent Mapping",
       details: [
         "Identify target candidate pools and talent pipelines",
-        "Use multiple sourcing methods (job portals, social media, referrals)",
+        "Use multiple sourcing methods (Internal ATS, job portals, social media, referrals)",
         "Leverage employer branding to attract top talent"
       ]
     },

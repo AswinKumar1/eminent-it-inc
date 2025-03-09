@@ -96,7 +96,7 @@ export default function Contact() {
                 <p className="text-gray-600">
                   1007 N Orange St.,<br /> 
                   4th Floor Suite #2472,
-                  Wilington, Delaware 19801.
+                  Wilmington, Delaware 19801.
                 </p>
               </div>
             </div>

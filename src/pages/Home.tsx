@@ -233,7 +233,7 @@ export default function Home() {
       </section>
 
       {/* 2. WHAT WE DO Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* NEW: Our RPO Process Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
+      <section className="py-24 bg-gradient-to-b from-blue-500 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -554,7 +554,7 @@ export default function Home() {
       </section>
 
       {/* 7. Stats Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <motion.div

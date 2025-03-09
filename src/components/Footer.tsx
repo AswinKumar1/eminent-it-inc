@@ -93,7 +93,7 @@ export default function Footer() {
                 <span className="text-gray-400">
                   1007 N Orange St., 
                   4th Floor Suite #2472, 
-                  Wilington, Delaware 19801<br />
+                  Wilmington, Delaware 19801<br />
                 </span>
               </li>
               <li className="flex items-center">

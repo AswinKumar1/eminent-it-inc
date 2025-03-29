@@ -13,7 +13,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-2xl font-bold text-blue-600">
               <img
-              src="https://eminentitinc.com/assets/img/logo/Logo3.png"
+              src="/Eminent_logo.png"
               alt="Eminent IT Services logo"
               className="h-16 w-auto mr-2"
               />

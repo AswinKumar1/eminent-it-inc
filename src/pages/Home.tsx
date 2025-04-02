@@ -39,31 +39,31 @@ export default function Home() {
     {
       quote: "Eminent IT Services has been instrumental in helping us find top talent quickly. Their understanding of our industry and company culture is exceptional.",
       name: "Sarah Johnson",
-      title: "CTO, TechSolutions Inc.",
+      title: "CTO, One of the A-Series Startup",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
       quote: "The quality of candidates provided by Eminent IT is consistently high. They've saved us countless hours in the hiring process and delivered exceptional results.",
       name: "Michael Chen",
-      title: "HR Director, HealthPlus",
+      title: "HR Director, Health care Industry giant",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
       quote: "Working with Eminent IT has transformed our hiring process. Their personalized approach and attention to detail have made them an invaluable partner.",
       name: "Jessica Williams",
-      title: "COO, FinanceWorks",
+      title: "COO, One of the FinTech company",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
       quote: "We've been able to scale our engineering team rapidly thanks to Eminent IT's recruitment expertise. They truly understand our technical requirements.",
       name: "David Rodriguez",
-      title: "VP of Engineering, CloudTech",
+      title: "VP of Engineering, One of the Fortune 500 Cloud company",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
       quote: "Their RPO solution has completely transformed how we approach hiring. The quality of candidates and efficiency of the process is remarkable.",
       name: "Amanda Lee",
-      title: "Talent Acquisition Manager, RetailGiant",
+      title: "Talent Acquisition Manager, Retail Giant",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     }
   ];
